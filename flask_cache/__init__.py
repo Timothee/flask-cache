@@ -510,7 +510,7 @@ class Cache(object):
                           new string to be used as the function name. If not set
                           then the function name is used.
         :param unless: Default None. Cache will *always* execute the caching
-                       facilities unelss this callable is true.
+                       facilities unless this callable is true.
                        This will bypass the caching entirely.
 
         .. versionadded:: 0.5
@@ -644,14 +644,14 @@ class Cache(object):
         .. note::
 
             Flask-Cache maintains an internal random version hash for the function.
-            Using delete_memoized will only swap out the version hash, causing
+            Using ``delete_memoized`` will only swap out the version hash, causing
             the memoize function to recompute results and put them into another key.
 
             This leaves any computed caches for this memoized function within the
             caching backend.
 
-            It is recommended to use a very high timeout with memoize if using
-            this function, so that when the version has is swapped, the old cached
+            It is recommended to use a very high timeout with ``memoize`` if using
+            this function, so that when the version is swapped, the old cached
             results would eventually be reclaimed by the caching backend.
         """
         if not callable(f):
@@ -674,7 +674,7 @@ class Cache(object):
         """
         Delete the version hash associated with the function.
 
-        ..warning::
+        .. warning::
 
             Performing this operation could leave keys behind that have
             been created with this version hash. It is up to the application

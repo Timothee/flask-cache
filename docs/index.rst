@@ -55,8 +55,8 @@ This decorator will use request.path by default for the cache_key.::
         return render_template('index.html')
 
 The cached decorator has another optional argument called ``unless``. This
-argument accepts a callable that returns True or False. If ``unless`` returns
-``True`` then it will bypass the caching mechanism entirely.
+argument accepts a callable that returns ``True`` or ``False``. If ``unless``
+returns ``True`` then it will bypass the caching mechanism entirely.
 
 Caching Other Functions
 -----------------------
